@@ -39,9 +39,9 @@ node{
       }
       stage('Pushing it ot the DockerHub'){
         echo 'Pushing the docker image to DockerHub'
-        withCredentials([string(credentialsId: 'dockerhubpassword', variable: 'dockerhubpassword')]) {
-            sh "${dockerCMD} login -u vikuldocker -p ${dockerhubpassword}"
-            sh "${dockerCMD} push vikuldocker/insureme:${tagName}"
+        withCredentials([string(credentialsId: 'dockerpass', variable: 'dockerpass')]) {
+            sh "${dockerCMD} login -u akshaysnb -p ${dockerpass}"
+            sh "${dockerCMD} push pintooinsureme:${tagName}"
       }
 
       stage('Configure and Deploy to the test-serverusing ansible'){  
