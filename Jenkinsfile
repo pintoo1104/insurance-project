@@ -35,7 +35,7 @@ node{
       }
       stage('Containerise the application'){
           echo "making the image out of the application"
-          sh "${dockerCMD} build -t vikuldocker/insureme:${tagName} . "
+          sh "${dockerCMD} build -t pintooinsureme:${tagName} . "
       }
       stage('Pushing it ot the DockerHub'){
         echo 'Pushing the docker image to DockerHub'
